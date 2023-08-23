@@ -267,7 +267,7 @@ def glass_blur_slow(x, severity=1):
     if c[1] < 1:
         c[1] = 1
 
-    x = np.uint8(gaussian(np.array(x) / 255.0, sigma=c[0], multichannel=True) * 255)
+    x = np.uint8(gaussian(np.array(x) / 255.0, sigma=c[0], channel_axis=2) * 255)
 
     # locally shuffle pixels
     for i in range(round(c[2])):
@@ -278,7 +278,7 @@ def glass_blur_slow(x, severity=1):
                 # swap
                 x[h, w], x[h_prime, w_prime] = x[h_prime, w_prime], x[h, w]
 
-    return np.clip(gaussian(x / 255.0, sigma=c[0], multichannel=True), 0, 1) * 255
+    return np.clip(gaussian(x / 255.0, sigma=c[0], channel_axis=2), 0, 1) * 255
 
 
 @numba.jit()
@@ -318,11 +318,11 @@ def glass_blur(x, severity=1):
     if c[1] < 1:
         c[1] = 1
 
-    x = np.uint8(gaussian(np.array(x) / 255.0, sigma=c[0], multichannel=True) * 255)
+    x = np.uint8(gaussian(np.array(x) / 255.0, sigma=c[0], channel_axis=2) * 255)
 
     shuffle_pixels(x, c)
 
-    return np.clip(gaussian(x / 255.0, sigma=c[0], multichannel=True), 0, 1) * 255
+    return np.clip(gaussian(x / 255.0, sigma=c[0], channel_axis=2), 0, 1) * 255
 
 
 def defocus_blur(x, severity=1):

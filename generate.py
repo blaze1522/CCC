@@ -6,6 +6,7 @@ import pickle
 import random
 from io import BytesIO
 
+from datetime import datetime
 import numpy as np
 import pandas as pd
 import requests
@@ -340,7 +341,8 @@ def GenerateDataset(
                 serial += 1
                 current_datasets = []
                 current_datasets_len = 0
-
+        
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Total generated images: {total_generated_images}")
         if total_generated_images >= cutoff:
             return
 

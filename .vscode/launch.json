@@ -19,7 +19,7 @@
         "--baseline",
         "40",
         "--processind",
-        "90",
+        "1",
         "--totalprocesses",
         "90"
       ]
