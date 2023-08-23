@@ -1,0 +1,1 @@
+python3 generate.py --imagenetval ./data/val/ --dest ./data/ccc/ --baseline 20 --processind 90 --totalprocesses 90

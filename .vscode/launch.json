@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Generate",
+      "type": "python",
+      "request": "launch",
+      "program": "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/generate.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": [
+        "--imagenetval",
+        "./data/val/",
+        "--dest",
+        "./data/ccc/",
+        "--baseline",
+        "40",
+        "--processind",
+        "90",
+        "--totalprocesses",
+        "90"
+      ]
+    }
+  ]
+}
