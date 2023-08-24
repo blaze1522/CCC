@@ -66,8 +66,8 @@ def evaluate(args):
     if not os.path.exists(os.path.join(args.logs, exp_name)):
         os.mkdir(os.path.join(args.logs, exp_name))
 
-    cur_seed = [43, 44, 45][args.processind % 3]
-    speed = [1000, 2000, 5000][int(args.processind / 3)]
+    cur_seed = [43, 44, 45][int(args.processind / 3)]
+    speed = [1000, 2000, 5000][int(args.processind % 3)]
 
     file_name = os.path.join(
         args.logs,
