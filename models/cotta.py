@@ -8,7 +8,7 @@ import torchvision.transforms.functional as F
 from numpy import random
 from torchvision.transforms import ColorJitter, Compose, Lambda
 
-from models import AdaptiveModel, register
+from models.registery import AdaptiveModel, register
 from models.functional import collect_params, configure_model
 
 

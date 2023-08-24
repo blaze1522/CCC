@@ -1,6 +1,6 @@
 import torch
 
-from models import AdaptiveModel, register
+from models.registery import AdaptiveModel, register
 
 
 @register("pretrained")

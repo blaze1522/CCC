@@ -10,7 +10,7 @@ import torch.jit
 import torch.nn as nn
 import torch.nn.functional as F
 
-from models import AdaptiveModel, register
+from models.registery import AdaptiveModel, register
 
 
 @register("eata")

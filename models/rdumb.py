@@ -9,7 +9,8 @@ import torch
 import torch.jit
 import torch.nn.functional as F
 
-from models import AdaptiveModel, functional, register
+from models.registery import AdaptiveModel, register
+from models import functional
 
 
 @register("rdumb")

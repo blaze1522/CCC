@@ -2,7 +2,7 @@ import torch
 import torch.jit
 import torch.nn.functional as F
 
-from models import AdaptiveModel, register
+from models.registery import AdaptiveModel, register
 from models.functional import collect_params, configure_model
 
 
