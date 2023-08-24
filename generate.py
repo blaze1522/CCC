@@ -388,8 +388,7 @@ class ApplyTransforms(data.Dataset):
         np.random.shuffle(all_paths)
         self.paths = all_paths
         self.paths = self.paths[:freq]
-        all_classes = os.listdir(data_root)
-
+        all_classes = sorted(os.listdir(data_root))
         target_list = []
         for cur_path in self.paths:
             cur_class = cur_path.split("/")[-2]
