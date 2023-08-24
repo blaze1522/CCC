@@ -5,6 +5,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Eval_2",
+      "type": "python",
+      "request": "launch",
+      "program": "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/eval.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": [
+      "--mode", "rdumb",
+      "--dset", "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/data/ccc",
+      "--logs", "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/logs",
+      "--baseline", "40",
+      "--processind", "2"]
+    },
+    {
       "name": "Generate",
       "type": "python",
       "request": "launch",
