@@ -13,6 +13,10 @@ from torchvision.transforms import ColorJitter, Compose, Lambda
 from models.registery import AdaptiveModel, register
 from models.functional import collect_params, configure_model
 
+from robustbench.model_zoo.architectures.utils_architectures import normalize_model, ImageNormalizer
+
+MEAN = (0.485, 0.456, 0.406)
+STD = (0.229, 0.224, 0.225)
 
 # from methods.base import TTAMethod
 # from models.model import split_up_model
@@ -253,8 +257,9 @@ def split_up_model(model):
     :param model: model to be split up
     :return: encoder and classifier
     """
-    encoder = nn.Sequential(model.normalize, nn.Sequential(*list(model.model.children())[:-1]), nn.Flatten())
-    classifier = model.model.fc
+    normalization = ImageNormalizer(mean=MEAN, std=STD).cuda()
+    encoder = nn.Sequential(normalization, nn.Sequential(*list(model.module.children())[:-1]), nn.Flatten())
+    classifier = model.module.fc
 
     return encoder, classifier
 
