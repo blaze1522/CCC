@@ -7,3 +7,4 @@ from .pretrained import Pretrained
 from .registery import AdaptiveModel, register
 from .rpl import RPL
 from .tent import Tent
+from .santa import SANTA
