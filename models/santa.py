@@ -5,8 +5,9 @@ import PIL
 import torch
 import torch.jit
 import torch.nn as nn
-import torch.nn.functional as F
+import torch.nn.functional as nF
 import torchvision.transforms as transforms
+import torchvision.transforms.functional as F
 from numpy import random
 from torchvision.transforms import ColorJitter, Compose, Lambda
 
@@ -122,7 +123,7 @@ class SANTA(AdaptiveModel):
         contrast_count = features.shape[1]
         contrast_feature = torch.cat(torch.unbind(features, dim=1), dim=0)
         contrast_feature = self.projector(contrast_feature)
-        contrast_feature = F.normalize(contrast_feature, p=2, dim=1)
+        contrast_feature = nF.normalize(contrast_feature, p=2, dim=1)
         if self.contrast_mode == 'one':
             anchor_feature = features[:, 0]
             anchor_count = 1
@@ -180,7 +181,7 @@ class SANTA(AdaptiveModel):
 
         with torch.no_grad():
             # dist[:, i] contains the distance from every source sample to one test sample
-            dist = F.cosine_similarity(self.prototypes_src.repeat(1, features_test.shape[0], 1),
+            dist = nF.cosine_similarity(self.prototypes_src.repeat(1, features_test.shape[0], 1),
                                        features_test.unsqueeze(0).repeat(self.prototypes_src.shape[0], 1, 1), dim=-1)
 
             # for every test feature, get the nearest source prototype and derive the label
