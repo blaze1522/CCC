@@ -1,42 +1,48 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Eval_2",
-      "type": "python",
-      "request": "launch",
-      "program": "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/eval.py",
-      "console": "integratedTerminal",
-      "justMyCode": true,
-      "args": [
-      "--mode", "rdumb",
-      "--dset", "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/data/ccc",
-      "--logs", "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/logs",
-      "--baseline", "40",
-      "--processind", "2"]
-    },
-    {
-      "name": "Generate",
-      "type": "python",
-      "request": "launch",
-      "program": "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/generate.py",
-      "console": "integratedTerminal",
-      "justMyCode": true,
-      "args": [
-        "--imagenetval",
-        "./data/val/",
-        "--dest",
-        "./data/ccc/",
-        "--baseline",
-        "40",
-        "--processind",
-        "1",
-        "--totalprocesses",
-        "90"
-      ]
-    }
-  ]
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Evaluate",
+			"type": "python",
+			"request": "launch",
+			"program": "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/eval.py",
+			"console": "integratedTerminal",
+			"justMyCode": true,
+			"args": [
+				"--mode",
+				"santa",
+				"--dset",
+				"/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/data/ccc",
+				"--logs",
+				"/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/logs",
+				"--baseline",
+				"10",
+				"--processind",
+				"0"
+			]
+		},
+		{
+			"name": "Generate",
+			"type": "python",
+			"request": "launch",
+			"program": "/mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/generate.py",
+			"console": "integratedTerminal",
+			"justMyCode": true,
+			"args": [
+				"--imagenetval",
+				"./data/val/",
+				"--dest",
+				"./data/ccc/",
+				"--baseline",
+				"10",
+				"--processind",
+				"0",
+				"--totalprocesses",
+				"9"
+			]
+		}
+	]
 }
