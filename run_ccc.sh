@@ -1,0 +1,4 @@
+python /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/eval.py --mode batchnorm --dset /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/data/ccc --logs /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/logs --baseline 10 --processind 0
+python /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/eval.py --mode rdumb --dset /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/data/ccc --logs /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/logs --baseline 10 --processind 0
+python /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/eval.py --mode tent --dset /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/data/ccc --logs /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/logs --baseline 10 --processind 0
+python /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/eval.py --mode eta --dset /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/data/ccc --logs /mnt/c37d5099-ac2c-4992-847b-b73906e77df8/goirik/CCC/logs --baseline 10 --processind 0
